@@ -15,12 +15,12 @@ vim.g.mapleader = "\\"
 vim.opt.termguicolors = true
 
 local plugins = {
+  'lewis6991/gitsigns.nvim',
 	'RRethy/vim-illuminate',
-  "sindrets/diffview.nvim",
+  'sindrets/diffview.nvim',
   {
     'dense-analysis/ale',
     config = function()
-      -- Configuration goes here.
       local g = vim.g
 
       g.ale_ruby_rubocop_auto_correct_all = 1
@@ -28,9 +28,9 @@ local plugins = {
       g.ale_linters = {
         ruby = {'rubocop', 'ruby'},
         lua = {'lua_language_server'},
-        javascript = {'prettier', 'eslint'},
-        vue = {'volar', 'prettier'},
-        typescript = {'eslint', 'prettier', 'tslint'}
+        -- javascript = {'prettier', 'eslint'},
+        -- vue = {'volar', 'prettier'},
+        -- typescript = {'eslint', 'prettier', 'tslint'}
       }
     end
   },
@@ -41,15 +41,11 @@ local plugins = {
         require('Comment').setup()
     end
 	},
-	{"akinsho/toggleterm.nvim", version = '*', config = function()
-		require("toggleterm").setup()
-		end
-	},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 	'f-person/git-blame.nvim',
 	'wakatime/vim-wakatime',
 	{
-    "windwp/nvim-autopairs",
+    'windwp/nvim-autopairs',
     event = "InsertEnter",
     config = function()
         require("nvim-autopairs").setup {}
@@ -62,45 +58,50 @@ local plugins = {
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   -- 'navarasu/onedark.nvim',
 		'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
-  {
-		'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
-    dependencies = {
-    --- Uncomment the two plugins below if you want to manage the language servers from neovim
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
-      {'neovim/nvim-lspconfig'},
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'L3MON4D3/LuaSnip'},
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lua'},
-      {'rafamadriz/friendly-snippets'}
-    }
-  },
+  -- {
+		-- 'VonHeikemen/lsp-zero.nvim',
+    -- branch = 'v3.x',
+    -- dependencies = {
+      --- Uncomment the two plugins below if you want to manage the language servers from neovim
+      -- {'williamboman/mason.nvim'},
+      -- {'williamboman/mason-lspconfig.nvim'},
+      -- {'neovim/nvim-lspconfig'},
+      -- {'hrsh7th/nvim-cmp'},
+      -- {'hrsh7th/cmp-nvim-lsp'},
+      -- {'L3MON4D3/LuaSnip'},
+      -- {'neovim/nvim-lspconfig'},
+      -- {'hrsh7th/cmp-buffer'},
+      -- {'hrsh7th/cmp-path'},
+      -- {'saadparwaiz1/cmp_luasnip'},
+      -- {'hrsh7th/cmp-nvim-lua'},
+      -- {'rafamadriz/friendly-snippets'}
+    -- }
+  -- },
+  -- {
+  --   "arsham/listish.nvim",
+  --   dependencies = {
+  --     "arsham/arshlib.nvim",
+  --     "nvim-treesitter/nvim-treesitter-textobjects",
+  --   },
+  --   config = true,
+  --   -- or to provide configuration
+  --   -- config = { theme_list = false, ..}
+  -- },
 	{
-		"arsham/arshamiser.nvim",
+		"arsham/arshamiser.nvim", 
 		dependencies = {
 			"arsham/arshlib.nvim",
 			"famiu/feline.nvim",
 			"rebelot/heirline.nvim",
 		},
 		config = function()
-    -- ignore any parts you don't want to 
-    vim.cmd.colorscheme("arshamiser_light")
-    require("arshamiser.feliniser")
-    -- or:
-    -- require("arshamiser.heirliniser")
-    _G.custom_foldtext = require("arshamiser.folding").foldtext
-    vim.opt.foldtext = "v:lua.custom_foldtext()"
-    -- if you want to draw a tabline:
-    vim.api.nvim_set_option("tabline", [[%{%v:lua.require("arshamiser.tabline").draw()%}]])
-		end,
+      require("arshamiser.feliniser")
+
+      _G.custom_foldtext = require("arshamiser.folding").foldtext
+        vim.opt.foldtext = "v:lua.custom_foldtext()"
+        -- if you want to draw a tabline:
+        vim.api.nvim_set_option("tabline", [[%{%v:lua.require("arshamiser.tabline").draw()%}]])
+		end
 	}
 }
 

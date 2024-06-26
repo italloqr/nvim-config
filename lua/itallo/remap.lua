@@ -17,7 +17,7 @@ vim.keymap.set("n", "td", ":bd<CR>")
 --    vim.cmd("so")
 --end)
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
+vim.keymap.set("n", "<leader>gd", vim.cmd.DiffviewOpen)
 -- Comment.nvim
 -- `gcc` - Toggles the current line using linewise comment
 -- [[ `gbc` - Toggles the current line using blockwise comment ]]

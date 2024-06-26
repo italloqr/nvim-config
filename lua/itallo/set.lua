@@ -7,9 +7,11 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
-vim.opt.foldmethod=indent
-vim.opt.foldcolumn= "0"
-vim.opt.foldlevel= 0
+
+-- vim.opt.foldmethod=indent
+-- vim.opt.foldnestmax=10
+-- vim.opt.nofoldenable = true
+-- vim.opt.foldlevel= 1
 -- vim.opt.nowrap = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
@@ -24,8 +26,6 @@ vim.opt.backup = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true
-
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
@@ -33,3 +33,5 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "120"
+vim.opt.clipboard = "unnamedplus"
+
