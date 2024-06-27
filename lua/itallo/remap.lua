@@ -3,8 +3,7 @@ vim.g.mapleader = "\\"
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "<C-b>", vim.cmd.Ex)
-
+vim.keymap.set("n", "<C-b>", vim.cmd.Neotree)
 --vim.keymap.set("n", "<C-d>", "<C-d>zz")
 --vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
@@ -31,12 +30,10 @@ vim.keymap.set("n", "<leader>gd", vim.cmd.DiffviewOpen)
 -- `gcip` - Toggle inside of paragraph
 -- `gca}` - Toggle around curly brackets
 
--- vim.keymap.set("n", "<leader>t", function()
-	-- vim.cmd("ToggleTerm size=20 dir=$PWD direction=horizontal name=terminal")
--- end)
-
-
-
+vim.keymap.set("n", "<leader>oc", vim.cmd.GitBlameOpenCommitURL)
+vim.keymap.set("n", 'K', vim.lsp.buf.hover, {})
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+vim.keymap.set({"n", "v"}, "<leader>ca", vim.lsp.buf.code_action, {})
 
 
 

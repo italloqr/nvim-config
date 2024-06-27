@@ -10,7 +10,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-	
+
 vim.g.mapleader = "\\"
 vim.opt.termguicolors = true
 
@@ -34,11 +34,24 @@ local plugins = {
       }
     end
   },
+  {
+    "nvim-telescope/telescope-ui-select.nvim"
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
 	{'akinsho/git-conflict.nvim', version = "*", config = true },
 	{
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
 	},
 	{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
@@ -58,37 +71,16 @@ local plugins = {
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   -- 'navarasu/onedark.nvim',
 		'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
-  -- {
-		-- 'VonHeikemen/lsp-zero.nvim',
-    -- branch = 'v3.x',
-    -- dependencies = {
-      --- Uncomment the two plugins below if you want to manage the language servers from neovim
-      -- {'williamboman/mason.nvim'},
-      -- {'williamboman/mason-lspconfig.nvim'},
-      -- {'neovim/nvim-lspconfig'},
-      -- {'hrsh7th/nvim-cmp'},
-      -- {'hrsh7th/cmp-nvim-lsp'},
-      -- {'L3MON4D3/LuaSnip'},
-      -- {'neovim/nvim-lspconfig'},
-      -- {'hrsh7th/cmp-buffer'},
-      -- {'hrsh7th/cmp-path'},
-      -- {'saadparwaiz1/cmp_luasnip'},
-      -- {'hrsh7th/cmp-nvim-lua'},
-      -- {'rafamadriz/friendly-snippets'}
-    -- }
-  -- },
-  -- {
-  --   "arsham/listish.nvim",
-  --   dependencies = {
-  --     "arsham/arshlib.nvim",
-  --     "nvim-treesitter/nvim-treesitter-textobjects",
-  --   },
-  --   config = true,
-  --   -- or to provide configuration
-  --   -- config = { theme_list = false, ..}
-  -- },
-	{
-		"arsham/arshamiser.nvim", 
+  {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+  },
+  {
+    "neovim/nvim-lspconfig"
+  },
+  {
+		"arsham/arshamiser.nvim",
 		dependencies = {
 			"arsham/arshlib.nvim",
 			"famiu/feline.nvim",
