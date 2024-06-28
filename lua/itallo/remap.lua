@@ -14,8 +14,9 @@ vim.keymap.set("n", "td", ":bd<CR>")
 
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>gd", vim.cmd.DiffviewOpen)
+vim.keymap.set("n", "dw", '"_dw', { noremap = true })
+vim.keymap.set("n", "dl", '"_dd', { noremap = true })
 
--- Comment.nvim
 -- `gcc` - Toggles the current line using linewise comment
 -- [[ `gbc` - Toggles the current line using blockwise comment ]]
 -- `[count]gcc` - Toggles the number of line given as a prefix-count using linewise
@@ -34,15 +35,14 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {})
 
-
 -- nvim-surround
 --    Old text                    Command         New text
 --------------------------------------------------------------------------------
-    -- surr*ound_words             ysiw)           (surround_words)
-    -- *make strings               ys$"            "make strings"
-    -- [delete ar*ound me!]        ds]             delete around me!
-    -- remove <b>HTML t*ags</b>    dst             remove HTML tags
-    -- 'change quot*es'            cs'"            "change quotes"
-    -- <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
-    -- delete(functi*on calls)     dsf             function calls
+-- surr*ound_words             ysiw)           (surround_words)
+-- *make strings               ys$"            "make strings"
+-- [delete ar*ound me!]        ds]             delete around me!
+-- remove <b>HTML t*ags</b>    dst             remove HTML tags
+-- 'change quot*es'            cs'"            "change quotes"
+-- <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
+-- delete(functi*on calls)     dsf             function calls
 
