@@ -1,2 +1,2 @@
-require('Comment').setup{}
-require("bufferline").setup{}
+require("Comment").setup({})
+require("bufferline").setup({})
