@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>gd", vim.cmd.DiffviewOpen)
 vim.keymap.set("n", "dw", '"_dw', { noremap = true })
 vim.keymap.set("n", "dl", '"_dd', { noremap = true })
-
+vim.keymap.set("n", "<leader>zz", ":e!<CR>)")
 -- `gcc` - Toggles the current line using linewise comment
 -- [[ `gbc` - Toggles the current line using blockwise comment ]]
 -- `[count]gcc` - Toggles the number of line given as a prefix-count using linewise
