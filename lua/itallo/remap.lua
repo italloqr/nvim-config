@@ -46,3 +46,8 @@ vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {})
 -- <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
 -- delete(functi*on calls)     dsf             function calls
 
+vim.api.nvim_create_user_command("CopyRelPath", function()
+	local path = vim.fn.expand("%")
+	vim.fn.setreg("+", path)
+	vim.notify('Copied "' .. path .. '" to the clipboard!')
+end, {})
