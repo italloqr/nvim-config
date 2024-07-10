@@ -1,3 +1,4 @@
 require("itallo.lazy")
-require("itallo.remap")
+require("bufferline").setup{}
 require("itallo.set")
+require("itallo.remap")

@@ -8,15 +8,35 @@ vim.keymap.set("n", "<C-b>", vim.cmd.Neotree)
 --vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("n", "<C-s>", ":w<CR>")
 vim.keymap.set("n", "tr", ":bp<CR>")
 vim.keymap.set("n", "ty", ":bn<CR>")
 vim.keymap.set("n", "td", ":bd<CR>")
 
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 vim.keymap.set("n", "<leader>gd", vim.cmd.DiffviewOpen)
+vim.keymap.set("n", "<leader>cd", vim.cmd.DiffviewClose)
+--      { "n", "s",              actions.toggle_stage_entry,             { desc = "Stage / unstage the selected entry" } }
+--      { "n", "S",              actions.stage_all,                      { desc = "Stage all entries" } },
+--      { "n", "U",              actions.unstage_all,                    { desc = "Unstage all entries" } },
+--      { "n", "X",              actions.restore_entry,                  { desc = "Restore entry to the state on the left side" } },
+--      { "n", "gf",             actions.goto_file_edit,                 { desc = "Open the file in the previous tabpage" } },
+--      { "n", "<C-w><C-f>",     actions.goto_file_split,                { desc = "Open the file in a new split" } },
+--      { "n", "<C-w>gf",        actions.goto_file_tab,                  { desc = "Open the file in a new tabpage" } },
+--      { "n", "[x",             actions.prev_conflict,                  { desc = "Go to the previous conflict" } },
+--      { "n", "]x",             actions.next_conflict,                  { desc = "Go to the next conflict" } },
+--      { "n", "g?",             actions.help("file_panel"),             { desc = "Open the help panel" } },
+--      { "n", "<leader>cO",     actions.conflict_choose_all("ours"),    { desc = "Choose the OURS version of a conflict for the whole file" } },
+--      { "n", "<leader>cT",     actions.conflict_choose_all("theirs"),  { desc = "Choose the THEIRS version of a conflict for the whole file" } },
+--      { "n", "<leader>cB",     actions.conflict_choose_all("base"),    { desc = "Choose the BASE version of a conflict for the whole file" } },
+--      { "n", "<leader>cA",     actions.conflict_choose_all("all"),     { desc = "Choose all the versions of a conflict for the whole file" } },
+--      { "n", "dX",             actions.conflict_choose_all("none"),    { desc = "Delete the conflict region for the whole file" } },
+
 vim.keymap.set("n", "dw", '"_dw', { noremap = true })
 vim.keymap.set("n", "dl", '"_dd', { noremap = true })
 vim.keymap.set("n", "<leader>zz", ":e!<CR>)")
+
 -- `gcc` - Toggles the current line using linewise comment
 -- [[ `gbc` - Toggles the current line using blockwise comment ]]
 -- `[count]gcc` - Toggles the number of line given as a prefix-count using linewise
@@ -51,3 +71,5 @@ vim.api.nvim_create_user_command("CopyRelPath", function()
 	vim.fn.setreg("+", path)
 	vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
+
+vim.keymap.set("n", "<leader>rp", ":CopyRelPath<CR>")
