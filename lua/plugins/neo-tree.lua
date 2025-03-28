@@ -3,15 +3,14 @@ return {
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+		"nvim-tree/nvim-web-devicons",
 		"MunifTanjim/nui.nvim",
-		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	config = function()
     local config = require("neo-tree")
     config.setup({
 			window = {
-				position = "right",
+				position = "left",
 				width = 50,
 				mappings = {
 					["A"] = "git_add_all",

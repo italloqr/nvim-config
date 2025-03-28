@@ -3,16 +3,13 @@ vim.g.mapleader = "\\"
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.keymap.set("n", "<C-b>", vim.cmd.Neotree)
+vim.keymap.set("n", "<leader>e", vim.cmd.Neotree)
 --vim.keymap.set("n", "<C-d>", "<C-d>zz")
 --vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
-vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("n", "<C-s>", ":w<CR>")
+vim.keymap.set({"i", "n"}, "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("n", "tr", ":bp<CR>")
 vim.keymap.set("n", "ty", ":bn<CR>")
 vim.keymap.set("n", "td", ":bd<CR>")
-
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>gd", vim.cmd.DiffviewOpen)
@@ -37,6 +34,16 @@ vim.keymap.set("n", "dw", '"_dw', { noremap = true })
 vim.keymap.set("n", "dl", '"_dd', { noremap = true })
 vim.keymap.set("n", "<leader>zz", ":e!<CR>)")
 
+
+
+-- local on_attach = function(_, bufnr)
+--   vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {} )
+--   vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {} )
+--   vim.keymap.set("n", "gd", vim.lsp.buf.definition, {} )
+--   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {} )
+--   vim.keymap.set("n", "gr", require('telescope.builtin').lsp_references, {})
+--   vim.keymap.set("n", "gh", vim.lsp.bug.hover, {})
+-- end
 -- `gcc` - Toggles the current line using linewise comment
 -- [[ `gbc` - Toggles the current line using blockwise comment ]]
 -- `[count]gcc` - Toggles the number of line given as a prefix-count using linewise
@@ -49,11 +56,16 @@ vim.keymap.set("n", "<leader>zz", ":e!<CR>)")
 -- `gcip` - Toggle inside of paragraph
 -- `gca}` - Toggle around curly brackets
 
-vim.keymap.set("n", "<leader>oc", vim.cmd.GitBlameOpenCommitURL)
+vim.keymap.set("n", "<leader>oc", vim.cmd.GitBlameOpenCommitURL) --Open the commit URL
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>ft", vim.lsp.buf.format, {})
+
+
+-- Gitsigns
+vim.keymap.set("n","<leader>hi", ":Gitsigns preview_hunk_inline<CR>", {})
+vim.keymap.set("n","<leader>ph", ":Gitsigns preview_hunk<CR>", {})
 
 -- nvim-surround
 --    Old text                    Command         New text

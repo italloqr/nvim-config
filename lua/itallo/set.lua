@@ -1,4 +1,3 @@
---vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -27,3 +26,4 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "120"
 vim.opt.clipboard = "unnamedplus"
+

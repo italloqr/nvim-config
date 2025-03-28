@@ -6,12 +6,7 @@ return {
     end,
   },
   {
-    "akinsho/git-conflict.nvim",
-    version = "*",
-    config = function() end,
-  },
-  {
-	  "lewis6991/gitsigns.nvim",
+    "lewis6991/gitsigns.nvim",
     config = function()
      local config = require("gitsigns")
       config.setup({});
