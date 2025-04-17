@@ -13,6 +13,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+vim.opt.termguicolors = true
 vim.g.mapleader = "\\"
 
 require("lazy").setup({
@@ -49,6 +50,19 @@ require("lazy").setup({
         "tutor",
         "zipPlugin",
       },
+    },
+  },
+})
+require("bufferline").setup({
+  options = {
+    mode = "buffers",
+    diagnostics = "nvim_lsp",
+    show_buffer_close_icons = true,
+    always_show_bufferline = true,
+    hover = {
+      enabled = true,
+      delay = 50,
+      reveal = { "close" },
     },
   },
 })

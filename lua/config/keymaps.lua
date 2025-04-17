@@ -14,6 +14,9 @@ map.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 -- save file
 map.set({ "i", "n" }, "<C-s>", "<Esc>:w<CR>")
 
+-- foldering UFO
+map.set("n", "zR", require("ufo").openAllFolds)
+map.set("n", "zM", require("ufo").closeAllFolds)
 -- tabs navigation
 map.set("n", "tr", ":bp<CR>")
 map.set("n", "ty", ":bn<CR>")
